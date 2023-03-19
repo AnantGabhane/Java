@@ -3,24 +3,26 @@ public class Swap {
         int a = 10;
         int b = 20;
 
-        //swap 2 numbers
+        // swap 2 numbers
         // int temp = a;
         // b=a;
         // b = temp;
-        swap(a,b);
-        System.out.println(a + " "+b);
+        swap(a, b);
+        System.out.println(a + " " + b);
 
         // String name = "Anant Gabhane";
         // changeName(name);
         // System.out.println(name);
 
     }
-    static void changeName(){
+
+    static void changeName() {
 
     }
+
     static void swap(int a, int b) {
         int temp = a;
-        b=a;
+        b = a;
         b = temp;
     }
 }
