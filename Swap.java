@@ -10,6 +10,13 @@ public class Swap {
         swap(a,b);
         System.out.println(a + " "+b);
 
+        // String name = "Anant Gabhane";
+        // changeName(name);
+        // System.out.println(name);
+
+    }
+    static void changeName(){
+
     }
     static void swap(int a, int b) {
         int temp = a;
