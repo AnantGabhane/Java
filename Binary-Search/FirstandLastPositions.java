@@ -7,11 +7,13 @@ public class FirstandLastPositions {
 
         int[] ans = { -1, -1 };
 
-        int start = search(nums, target, true);
-        int end = search(nums, target, false);
+        ans[0] = search(nums, target, true);
 
-        ans[0] =start;
-        ans[1] = end;
+        if (ans[0] != -1) {
+            ans[1] = search(nums, target, false);
+        }
+
+        return ans;
     }
 
     int search(int[] nums, int target, boolean findStartIndex) {
@@ -36,7 +38,7 @@ public class FirstandLastPositions {
                 ans = mid;
                 if (findStartIndex == true) {
                     end = mid - 1;
-                }else{
+                } else {
                     start = mid + 1;
                 }
             }
