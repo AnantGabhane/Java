@@ -1,6 +1,6 @@
 public class SumofDigits {
     public static void main(String[] args) {
-        System.out.println(NumSum(1342));
+        System.out.println(NumSum(13420));
     }
 
     static int NumSum(int n) {
