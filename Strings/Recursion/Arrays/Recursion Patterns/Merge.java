@@ -4,7 +4,7 @@ public class Merge {
     public static void main(String[] args) {
         // triangle2(4, 0);
         int[] arr = { 5, 4, 3, 2, 1 };
-        arr = mergesort(arr);
+        mergesortInplace(arr, 0, arr.length);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -49,5 +49,49 @@ public class Merge {
             k++;
         }
         return mix;
+    }
+
+    // new approach
+    // sort the array is selection sort
+    static void mergesortInplace(int[] arr, int s, int e) {
+        if (e - s == 1) {
+            return;
+        }
+        int mid = (s + e) / 2;
+
+        mergesortInplace(arr, s, mid);
+        mergesortInplace(arr, mid, e);
+        mergesortInplace(arr, s, mid, e);
+    }
+
+    static void mergesortInplace(int[] arr, int s, int m, int e) {
+        int[] mix = new int[e - s];
+        int i = s;
+        int j = m;
+        int k = 0;
+        while (i < m && j < e) {
+            if (arr[i] < arr[j]) {
+                mix[k] = arr[i];
+                i++;
+            } else {
+                mix[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+        // possible that array is not complete
+        while (i < m) {
+            mix[k] = arr[i];
+            i++;
+            k++;
+        }
+        while (j < e) {
+            mix[k] = arr[j];
+            j++;
+            k++;
+        }
+        for (int l = 0; l < mix.length; l++) {
+            arr[s + l] = mix[l];
+        }
     }
 }
